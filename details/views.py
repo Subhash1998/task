@@ -103,7 +103,7 @@ import pandas as pd
 def csvload(request):
 	data=pd.read_csv('/home/subhash/test/bank/details/bank_branches.csv')
 	print(len(data))
-	for i in range(0,10001):
+	for i in range(7000,10000):
 		detail=Bank_Detail()
 		detail.id=i+1
 		detail.ifsc=data["ifsc"][i]
