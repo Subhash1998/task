@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bank Details</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<style type="text/css">
+	::placeholder{
+		color: black;
+	}
+</style>
+<body bgcolor="#D3D3D3">
+	<br><br><br><br><br><br>
+	<div class="row">
+		<div class="col s4"></div>
+		<div align="center" style="width: 500px;" class="col s4">
+			<h4>Branch detail from ifsc</h4>
+			<form action="/branchdetail/" method="POST">
+				{% csrf_token %}
+				<input type="text" name="ifsc" placeholder="Enter ifsc code">
+				<br><br>
+				<button type="Submit" class="btn btn-success">Get branch detail</button>
+			</form>
+
+			<br><br><br><br>
+			<h4>All Branch detail from city and bank name</h4>
+			<form action="/allbranchCity/" method="POST">
+				{% csrf_token %}
+				<input type="text" name="city" placeholder="Enter City Name">
+				<br><br>
+				<input type="text" name="name" placeholder="Enter Bank Name">
+				<br><br>
+				<button type="Submit" class="btn btn-success">Get all branch details</button>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
