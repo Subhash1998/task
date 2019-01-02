@@ -25,7 +25,7 @@ SECRET_KEY = '*_0-0wb7-qa=sm41po*_8909u23n#777(=77#a269ya1=)hym$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['bank-details-fyle.herokuapp.com','*']
 
 
 # Application definition
@@ -81,7 +81,7 @@ DATABASES = {
         'NAME': 'myproject',
         'USER': 'myprojectuser',
         'PASSWORD': 'Subhash1998@',
-        'HOST': '*',
+        'HOST': 'bank-details-fyle.herokuapp.com',
         'PORT': '',
     }
 }
