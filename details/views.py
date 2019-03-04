@@ -18,7 +18,7 @@ def branchdetail(request):
 			return JsonResponse(data,safe=False)
 
 		try:
-			detail=Bank_Detail.objects.get(ifsc=ifsc)
+			detail=Bank_Detail.objects.get(ifsc__iexact=ifsc)
 		except Exception as e:
 			data["success"]=False
 			data["message"]="Details for your ifsc does not exist."
@@ -66,7 +66,7 @@ def allbranchCity(request):
 			data["message"] = "Enter the bank name."
 			return JsonResponse(data,safe=False)
 	        
-		allbranch = Bank_Detail.objects.filter(city=city,bank_name=name)
+		allbranch = Bank_Detail.objects.filter(city__iexact=city,bank_name__iexact=name)
 
 		if allbranch.count() == 0:
 			data["success"] = False
